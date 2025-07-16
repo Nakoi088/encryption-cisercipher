@@ -1,0 +1,43 @@
+# this is a python code
+
+
+
+
+alpa = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+num = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+
+cipher=''
+
+print('Input the KEY')
+key = int(input())
+
+print('Please input your sentance:')
+sentance = input()
+
+for i in sentance:
+
+    if i == ' ':
+        cipher = cipher + ' '
+        continue
+    if i == '.':
+        cipher = cipher +'.'
+        continue
+    
+    alpaIndexValue1 = alpa.index(i)
+
+    numValue1 = num[alpaIndexValue1]
+
+    newValue = numValue1 + key
+
+    while newValue > 25:
+        newValue = newValue - 26
+
+    numIndexValue1 = num.index(newValue)
+
+    alpaValue1 = alpa[numIndexValue1]
+
+    cipher = cipher + alpaValue1
+
+print(cipher)
+    
