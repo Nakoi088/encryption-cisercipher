@@ -1,0 +1,42 @@
+#this is a python program
+
+
+
+alpa = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+num = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+
+decipher=''
+
+print('Input the KEY')
+key = int(input())
+
+print('Please input your sentance to decipher:')
+sentance = input()
+
+for i in sentance:
+
+    if i == ' ':
+        decipher = decipher + ' '
+        continue
+    if i == '.':
+        decipher = decipher +'.'
+        continue
+    
+    alpaIndexValue1 = alpa.index(i)
+
+    numValue1 = num[alpaIndexValue1]
+
+    newValue = numValue1 - key
+
+    while newValue < 0:
+        newValue = newValue + 26
+
+    numIndexValue1 = num.index(newValue)
+
+    alpaValue1 = alpa[numIndexValue1]
+
+    decipher = decipher + alpaValue1
+
+print(decipher)
+    
